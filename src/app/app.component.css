@@ -1,0 +1,7 @@
+nav {
+  display: flex;
+  gap: 25px;
+  margin: 2% 0 0 5%;
+  text-decoration: none;
+  font-size: larger;
+}
