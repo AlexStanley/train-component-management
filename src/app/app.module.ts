@@ -6,19 +6,24 @@ import { AppComponent } from './app.component';
 import { TrainComponentsListComponent } from './components/train-components-list/train-components-list.component';
 import { CreateTrainComponentComponent } from './components/create-train-component/create-train-component.component';
 import { EditTrainComponentComponent } from './components/edit-train-component/edit-train-component.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     TrainComponentsListComponent,
     CreateTrainComponentComponent,
-    EditTrainComponentComponent
+    EditTrainComponentComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

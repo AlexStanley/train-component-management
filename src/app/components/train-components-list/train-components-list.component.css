@@ -1,0 +1,30 @@
+th,
+td {
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+th {
+  background-color: gray;
+  color: white;
+}
+
+a {
+  padding: 5px 10px;
+}
+
+table {
+  margin-bottom: 15px;
+  margin-left: 5%;
+}
+
+h2,
+.create-item {
+  display: inline-block;
+  margin-left: 5%;
+}
+
+h2 {
+  margin-top: 5%;
+}

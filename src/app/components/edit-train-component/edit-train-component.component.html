@@ -1,1 +1,54 @@
-<p>edit-train-component works!</p>
+<div>
+  <h3>Edit the Train Component Item</h3>
+  <div class="item-info">
+    <label><b>ID:&nbsp;</b></label>
+    <span
+      ><b>{{ itemId }}</b></span
+    >
+  </div>
+  <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        class="form-control"
+      />
+    </div>
+    <div>
+      <label for="uniqueNumber">Unique Number:</label>
+      <input
+        type="text"
+        id="uniqueNumber"
+        formControlName="uniqueNumber"
+        class="form-control"
+      />
+    </div>
+    <div>
+      <input
+        type="checkbox"
+        (change)="fieldsChange($event)"
+        id="canAssignQuantity"
+        formControlName="canAssignQuantity"
+        class="form-check-input"
+      />
+      <label for="canAssignQuantity" class="form-check-label"
+        >Can Assign Quantity:</label
+      >
+    </div>
+    <div class="form-group">
+      <label>The Amount of Item:</label>
+      <input
+        type="text"
+        formControlName="itemAmount"
+        class="form-control"
+        [disabled]="!itemForm.canAssignQuantity"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="itemForm.invalid">
+      Update
+    </button>
+    <a routerLink="/item/list">Back to the Train Component List</a>
+  </form>
+</div>
