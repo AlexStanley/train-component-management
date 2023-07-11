@@ -21,17 +21,7 @@ export class CreateTrainComponentComponent {
       name: ['', Validators.required],
       uniqueNumber: ['', Validators.required],
       canAssignQuantity: [false],
-      itemAmount: [{ value: '', disabled: true }, Validators.required],
     });
-  }
-
-  fieldsChange(values: any): void {
-    if (values.currentTarget.checked) {
-      this.itemForm.get('itemAmount')?.enable();
-    } else {
-      this.itemForm.get('itemAmount')?.disable();
-      this.itemForm.controls['itemAmount'].setValue(this.emptyString);
-    }
   }
 
   onSubmit() {

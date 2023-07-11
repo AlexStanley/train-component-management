@@ -8,6 +8,10 @@ import { CreateTrainComponentComponent } from './components/create-train-compone
 import { EditTrainComponentComponent } from './components/edit-train-component/edit-train-component.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ManageHierarchyComponent } from './components/manage-hierarchy/manage-hierarchy.component';
+import { HierarchyComponent } from './components/hierarchy/hierarchy.component';
+import { ChildComponent } from './components/child/child.component';
+import { AssignQuantityComponent } from './components/assign-quantity/assign-quantity.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +19,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TrainComponentsListComponent,
     CreateTrainComponentComponent,
     EditTrainComponentComponent,
+    ManageHierarchyComponent,
+    HierarchyComponent,
+    ChildComponent,
+    AssignQuantityComponent,
   ],
   imports: [
     BrowserModule,

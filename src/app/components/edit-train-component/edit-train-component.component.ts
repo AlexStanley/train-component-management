@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Item } from 'src/app/Item';
+import { Item } from 'src/app/models/Item';
 import { TrainComponentService } from 'src/app/services/train-component-service.service';
 
 @Component({
@@ -32,17 +32,7 @@ export class EditTrainComponentComponent {
       name: ['', Validators.required],
       uniqueNumber: ['', Validators.required],
       canAssignQuantity: [false],
-      itemAmount: [{ value: '', disabled: false }],
     });
-  }
-
-  fieldsChange(values: any): void {
-    if (values.currentTarget.checked) {
-      this.itemForm.get('itemAmount')?.enable();
-    } else {
-      this.itemForm.get('itemAmount')?.disable();
-      this.itemForm.controls['itemAmount'].setValue(this.emptyString);
-    }
   }
 
   fetchItem(): void {

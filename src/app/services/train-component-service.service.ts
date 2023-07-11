@@ -15,18 +15,7 @@ export class TrainComponentService {
   }
 
   getById(id: number): Observable<any> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.get<any>(url);
-  }
-
-  addChild(parentId: number, childId: number): Observable<any> {
-    const url = `${this.apiUrl}/${parentId}/children`;
-    return this.http.post<any>(url, { childId });
-  }
-
-  assignQuantity(id: number, quantity: number): Observable<any> {
-    const url = `${this.apiUrl}/${id}/assignquantity`;
-    return this.http.put<any>(url, { quantity });
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
   create(trainComponent: any) {

@@ -1,0 +1,25 @@
+<div>
+  <h3>"Manage the Train Component in the hierarchy."</h3>
+  <form [formGroup]="itemForm" (ngSubmit)="saveItem()">
+    <div>
+      <label for="childComponentID" class="form-check-label">ElementId:</label>
+      <input
+        type="text"
+        id="childComponentID"
+        formControlName="childComponentID"
+      />
+    </div>
+    <div>
+      <label for="parentComponentID" class="form-check-label">ParentId:</label>
+      <input
+        type="text"
+        id="parentComponentID"
+        formControlName="parentComponentID"
+        required
+      />
+    </div>
+    <div>
+      <button type="submit">{{ isUpdate ? "Update" : "Create" }}</button>
+    </div>
+  </form>
+</div>

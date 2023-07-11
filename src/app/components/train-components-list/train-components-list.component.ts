@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TrainComponentManagementService } from 'src/app/services/train-component-management.service';
 import { TrainComponentService } from 'src/app/services/train-component-service.service';
 
 @Component({
@@ -9,7 +11,11 @@ import { TrainComponentService } from 'src/app/services/train-component-service.
 export class TrainComponentsListComponent implements OnInit {
   items: any[] = [];
 
-  constructor(private trainComponentService: TrainComponentService) {}
+  constructor(
+    private trainComponentService: TrainComponentService,
+    private router: Router,
+    private trainComponentManagementService: TrainComponentManagementService
+  ) {}
 
   ngOnInit(): void {
     this.fetchItems();
@@ -25,6 +31,16 @@ export class TrainComponentsListComponent implements OnInit {
     if (confirm('Are you sure you want to delete this item?')) {
       this.trainComponentService.delete(itemId).subscribe(() => {
         this.fetchItems();
+      });
+    }
+  }
+
+  onRemoveFromHierarchy(itemId: number): void {
+    if (
+      confirm('Are you sure if you want to remove this item from hierarchy?')
+    ) {
+      this.trainComponentManagementService.delete(itemId).subscribe(() => {
+        this.router.navigate(['/hierarchy']);
       });
     }
   }

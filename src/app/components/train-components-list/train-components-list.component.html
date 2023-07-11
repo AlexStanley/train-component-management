@@ -1,27 +1,63 @@
 <h2>Train Component List:</h2>
 <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Unique Number</th>
-        <th>Can Assign Quantity</th>
-        <th>Amount</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of items">
-        <td>{{ item.id }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.uniqueNumber }}</td>
-        <td>{{ item.canAssignQuantity ? 'Yes' : 'No' }}</td>
-        <td>{{ item.itemAmount }}</td>
-        <td>
-          <a routerLink="/item/edit/{{ item.id }}"><i class="fa fa-pencil"></i></a>
-          <a (click)="onDelete(item.id)"><i class="fa fa-trash"></i></a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <a class="create-item" routerLink="/item/create">Add New Item</a>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Unique Number</th>
+      <th>Can Assign Quantity</th>
+      <th>Amount</th>
+      <th>Managing components</th>
+      <th>Managing hierarchy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.uniqueNumber }}</td>
+      <td>{{ item.canAssignQuantity ? "Yes" : "No" }}</td>
+      <td>{{ item.itemAmount }}</td>
+      <td>
+        <button
+          type="button"
+          title="Assign Quality"
+          routerLink="assign-quantity/{{ item.id }}"
+          [disabled]="!item.canAssignQuantity"
+        >
+          <a><i class="fa fa-plus"></i></a>
+        </button>
+        <button
+          type="button"
+          title="Edit information about the component"
+          routerLink="/item/edit/{{ item.id }}"
+        >
+          <a><i class="fa fa-pencil"></i></a>
+        </button>
+        <button
+          type="button"
+          title="Remove the component from the list"
+          (click)="onDelete(item.id)"
+        >
+          <a><i class="fa fa-trash"></i></a>
+        </button>
+      </td>
+      <td>
+        <button
+          type="button"
+          title="Manage the component in the hierarchy"
+          routerLink="manage-hierarchy/{{ item.id }}"
+        >
+          <a><i class="fa fa-sort"></i></a>
+        </button>
+        <button
+          type="button"
+          title="Remove the component from the hierarchy"
+          (click)="onRemoveFromHierarchy(item.id)"
+        >
+          <a><i class="fa fa-minus-circle"></i></a>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

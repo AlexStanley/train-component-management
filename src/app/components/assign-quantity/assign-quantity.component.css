@@ -1,0 +1,22 @@
+form {
+  width: 30%;
+  margin: 0 5% 5%;
+}
+
+input {
+  margin: 10px 0;
+}
+
+h3 {
+  display: inline-block;
+  margin: 5% 0 2% 5%;
+}
+
+.item-info {
+  margin-left: 5%;
+  margin-bottom: 1%;
+}
+
+button {
+  margin-right: 5%;
+}

@@ -1,0 +1,11 @@
+<div class="hierarchy">
+  <ul *ngFor="let element of elements">
+    <li *ngIf="element.parentComponentID == 0">
+      {{ element.id }} - {{ element.name }} - {{ element.uniqueNumber }} -
+      {{ element.canAssignQuantity == true ? "Yes" : "No" }}
+      <div *ngIf="element.children.length > 0">
+        <app-child [elements]="element.children"></app-child>
+      </div>
+    </li>
+  </ul>
+</div>

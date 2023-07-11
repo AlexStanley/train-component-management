@@ -10,10 +10,6 @@ th {
   color: white;
 }
 
-a {
-  padding: 5px 10px;
-}
-
 table {
   margin-bottom: 15px;
   margin-left: 5%;
@@ -26,5 +22,22 @@ h2,
 }
 
 h2 {
-  margin-top: 2%;
+  margin-top: 3%;
+}
+
+a {
+  padding: 5px 15px;
+}
+
+button {
+  margin: 0 5px;
+  border-color: gray;
+}
+
+button:disabled > a > i {
+  color: lightgray;
+}
+
+i {
+  color: royalblue;
 }

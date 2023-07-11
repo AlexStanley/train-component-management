@@ -1,0 +1,23 @@
+<h3>Assign Quantity to the Train Component:</h3>
+<div class="item-info">
+  <label><b>ID:&nbsp;</b></label>
+  <span
+    ><b>{{ itemId }}</b></span
+  >
+</div>
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>The Amount of Item:</label>
+    <input
+      title="quantity"
+      type="text"
+      formControlName="quantity"
+      class="form-control"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="itemForm.invalid">
+    Assign
+  </button>
+  <a routerLink="/item/list">Back to the Train Component List</a>
+</form>
+
